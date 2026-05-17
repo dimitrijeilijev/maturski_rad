@@ -36,7 +36,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-indigo-100 px-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl text-black font-semibold text-center mb-6">
           PRIJAVA
@@ -63,7 +63,7 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-800 text-white py-2 rounded-md hover:bg-blue-900 transition"
+            className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition"
           >
             Prijavi se
           </button>

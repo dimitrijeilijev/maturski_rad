@@ -170,7 +170,15 @@ export default function AddTodoForm({ categories = [], onSuccess, onCancel }) {
       <div className="flex gap-3">
         <button
           type="submit"
-          className="bg-indigo-600 text-white px-4 py-2 rounded w-full"
+          className="
+          bg-indigo-600 
+          text-white 
+          px-4 py-2 
+          rounded 
+          w-full
+          hover:bg-indigo-700
+          "
+
         >
           Dodaj
         </button>
@@ -178,7 +186,13 @@ export default function AddTodoForm({ categories = [], onSuccess, onCancel }) {
         <button
           type="button"
           onClick={onCancel}
-          className="bg-gray-300 px-4 py-2 rounded w-full"
+          className="
+          bg-gray-300 
+          px-4 py-2 
+          rounded
+          w-full
+          hover:bg-gray-400 
+           "
         >
           Odustani
         </button>

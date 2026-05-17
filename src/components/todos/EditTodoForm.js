@@ -187,7 +187,7 @@ export default function EditTodoForm({
       <div className="flex gap-3">
         <button
           type="submit"
-          className="bg-green-600 text-white px-4 py-2 rounded w-full"
+          className="bg-green-600 text-white px-4 py-2 rounded w-full hover:bg-green-700"
         >
           Sačuvaj izmene
         </button>
@@ -195,7 +195,7 @@ export default function EditTodoForm({
         <button
           type="button"
           onClick={onCancel}
-          className="bg-gray-300 px-4 py-2 rounded w-full"
+          className="bg-gray-300 px-4 py-2 rounded w-full hover:bg-gray-400"
         >
           Odustani
         </button>

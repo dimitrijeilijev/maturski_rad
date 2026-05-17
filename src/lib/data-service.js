@@ -143,9 +143,11 @@ export async function getTodaysTodos() {
     };
 
   const today = new Date();
+  // console.log(today);
   const todayDate = today.toISOString().split("T")[0];
+  // console.log(todayDate);
   const todayDay = today.getDay();
-
+  // console.log(todayDay);
   /* =========================
      1️ Dohvati aktivne remindere
   ========================= */
@@ -168,9 +170,9 @@ export async function getTodaysTodos() {
     )
     .eq("user_id", user.id)
     .eq("is_active", true);
-
+   
   if (error) throw new Error(error.message);
-
+  // console.log(reminders);
   /* =========================
      2️ Filtriraj današnje
   ========================= */
@@ -191,6 +193,8 @@ export async function getTodaysTodos() {
     })
     .map((reminder) => reminder.todos);
 
+    // console.log("///////////////");
+    // console.log(todaysTodosRaw);
   const total = todaysTodosRaw.length;
 
   if (total === 0)
@@ -213,6 +217,8 @@ export async function getTodaysTodos() {
 
   const completedIds = new Set(completions?.map((c) => c.todo_id) || []);
 
+  // console.log("///////////////");
+  // console.log(completedIds);
   /* =========================
      4️ Spoji is_completed dinamički
   ========================= */
@@ -226,6 +232,8 @@ export async function getTodaysTodos() {
 
   const activeReminders = total;
 
+  // console.log("///////////////");
+  // console.log(todaysTodos );
   /* =========================
      5️ Sortiranje (completed na kraj)
   ========================= */
@@ -248,6 +256,12 @@ export async function getTodaysTodos() {
     todaysTodos.filter((t) => t.priority === "low"),
   );
 
+  // console.log("///////////////high");
+  // console.log(high);
+  // console.log("///////////////medium");
+  // console.log(medium);
+  // console.log("///////////////low");
+  // console.log(low);
   return {
     grouped: { high, medium, low },
     total,

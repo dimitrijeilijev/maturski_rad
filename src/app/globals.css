@@ -7,7 +7,7 @@ body {
   @apply text-gray-800 text-base leading-relaxed bg-white;
 }
 
-/* Linkovi */
+/* Linkovi 
 a {
   @apply text-pink-600 hover:text-pink-800 transition duration-200;
 }

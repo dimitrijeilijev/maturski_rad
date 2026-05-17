@@ -10,7 +10,7 @@ export default function Sidebar({ mobile = false, onNavigate }) {
     `block px-3 py-2 rounded-lg transition-colors ${
       pathname === path
         ? "bg-indigo-100 text-indigo-600 font-semibold"
-        : "hover:bg-gray-100"
+        : "hover:bg-indigo-100"
     }`;
 
   return (
