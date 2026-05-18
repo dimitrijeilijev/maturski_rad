@@ -1,25 +1,29 @@
-// app/api/auth/login/route.js
+// app/api/auth/register/route.js
+
 import { NextResponse } from "next/server";
-// import { cookies } from "next/headers";
-// import { createServerClient } from "@supabase/ssr";
 import { createActionSupabaseClient } from "@/lib/supabase/action";
 
 export async function POST(req) {
   const formData = await req.formData();
   const email = formData.get("email");
   const password = formData.get("password");
+  const fullName = formData.get("fullName");
 
   const supabase = await createActionSupabaseClient();
-  
 
-  const { data, error } = await supabase.auth.signInWithPassword({
+  const {  error } = await supabase.auth.signUp({
     email,
     password,
+    options: {
+      data: {
+        full_name: fullName,
+      },
+    },
   });
 
   if (error) {
-    return NextResponse.json({ error: error.message }, { status: 401 });
+    return NextResponse.json({ error: error.message }, { status: 400 });
   }
 
-  return NextResponse.json({ success: true, user: data.user });
+  return NextResponse.json({ success: true });
 }

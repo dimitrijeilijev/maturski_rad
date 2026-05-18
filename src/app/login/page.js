@@ -68,6 +68,18 @@ export default function LoginPage() {
             Prijavi se
           </button>
         </form>
+
+        <div className="mt-6 text-center space-y-2">
+          <p className="text-sm">
+            Nemate nalog?{" "}
+            <a
+              href="/register"
+              className="text-blue-700 hover:underline font-medium"
+            >
+              Registrujte se
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );
